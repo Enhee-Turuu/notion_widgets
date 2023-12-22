@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <style>
+
+        .widget {
+            padding: 5px 5px ;
+            color: #000000;
+            text-align: center;
+                max-width: 95%;
+            margin: auto;
+            font-family: 'Caveat', cursive;
+            font-size: 2em;
+
+        }
+
+        div {
+             width: 95%;
+             min-height: 100px;
+
+            background:
+                linear-gradient(to right, black 4px, transparent 4px) 0 0,
+                linear-gradient(to right, black 4px, transparent 4px) 0 100%,
+                linear-gradient(to left, black 4px, transparent 4px) 100% 0,
+                linear-gradient(to left, black 4px, transparent 4px) 100% 100%,
+                linear-gradient(to bottom, black 4px, transparent 4px) 0 0,
+                linear-gradient(to bottom, black 4px, transparent 4px) 100% 0,
+                linear-gradient(to top, black 4px, transparent 4px) 0 100%,
+                linear-gradient(to top, black 4px, transparent 4px) 100% 100%;
+
+            background-repeat: no-repeat;
+            background-size: 20px 20px;
+}
+
+     
+    </style>
+</head>
+<body>
+
+    <div class="widget" id="widget"></div>
+
+
+<script>
+
+quotes=[
+"1 Шүүгдэхгүйн тулд чи бүү шүү.",
+"2 Учир нь та нар яаж шүүнэ, түүнчлэн шүүгдэнэ. Та нарын хэмжүүрийн жишиг өөрсдийг чинь хэмжинэ.",
+"3 Чи ах дүүсийнхээ нүдэн дэх үртсийг хардаг атал яагаад өөрийн нүдэн дэх дүнзийг анзаардаггүй юм бэ?",
+"4 Эсвэл, өөрийн чинь нүдэнд дүнз байх атал ах дүүстээ “Нүднээс чинь тэр үртсийг аваад өгье” гэж хэлнэ гэж үү?",
+"5 Хоёр нүүрт хүн чи, эхлээд нүднээсээ дүнзээ авч хая, тэгвэл чи ах дүүгийнхээ нүднээс үртсийг авч хаяхдаа сайн харах болно.",
+"6 Ариун юмыг нохдод бүү өг. Өөрсдийн сувдыг гахайны өмнө бүү хая. Тэд түүнийг хөл дороо гишгэчихээд, эргэж чамайг хэсэглэн тастчих вий.",
+"7 Гуй, тэгвэл та нарт өгнө. Хай, тэгвэл та нар олно. Тогш, тэгвэл та нарт нээгдэнэ.",
+"8 Гуйдаг хүн бүр авна, эрж хайдаг хүн олно, тогшдог хүнд нээгдэнэ.",
+"9 Хүүгээ талх гуйхад чулуу өгдөг хүн та нарын дунд байна уу?",
+"10 Эсвэл, загас гуйхад нь түүнд могой өгөхгүй биз дээ?",
+"11 Хэрэв та нар бузар атлаа хүүхдүүддээ сайн бэлэг өгөхөө мэддэг бол тэнгэр дэх Эцэг тань Өөрөөс нь гуйдаг хүмүүст илүү сайныг өгөх нь дамжиггүй бус уу? ",
+"12 Тиймээс та нар хүмүүсийг өөрсдөдөө хэрхэн хандаасай гэж хүссэнээрээ л өөрсдөө ч тийнхүү тэдэнд ханд. Энэ бол Хууль болоод Эш үзүүлэгчид мөн.",
+"13 Нарийн хаалгаар ор. Учир нь сүйрэл уруу татан оруулдаг хаалга нь өргөн, зам нь уужим юм. Олон хүн түүгээр тийшээ ордог.",
+];
+
+const INTERVAL = 86400000;
+
+function dispalyQuote(){
+
+    document.getElementById('widget').innerHTML =quotes[0];
+    quotes.forEach((quote, i) => {
+        setTimeout(() => {
+            document.getElementById('widget').innerHTML =quote;
+        }, i * INTERVAL);  
+    });
+    }
+
+    function dispalyWidget() {
+        dispalyQuote();
+        setTimeout(dispalyWidget, quotes.length*INTERVAL);
+    }
+    dispalyWidget()
+
+</script>
+
+</body>
+</html>

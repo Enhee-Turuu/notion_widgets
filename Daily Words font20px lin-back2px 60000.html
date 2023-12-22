@@ -7,29 +7,23 @@
     <title>Quote</title>
     <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
     <style>
-    body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        margin: 0;
-    }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Optional background color */
+        }
 
         .widget {
-            padding: 5px 5px ;
+            padding: 5px 5px;
             color: #000000;
             text-align: center;
-                max-width: 95%;
+            max-width: 95%;
             margin: auto;
             font-family: 'Caveat', cursive;
             font-size: 20px;
-
-        }
-
-        div {
-             width: 95%;
-             min-height: 100px;
-
             background:
                 linear-gradient(to right, black 2px, transparent 2px) 0 0,
                 linear-gradient(to right, black 2px, transparent 2px) 0 100%,
@@ -39,22 +33,17 @@
                 linear-gradient(to bottom, black 2px, transparent 2px) 100% 0,
                 linear-gradient(to top, black 2px, transparent 2px) 0 100%,
                 linear-gradient(to top, black 2px, transparent 2px) 100% 100%;
-
             background-repeat: no-repeat;
             background-size: 20px 20px;
-}
-
-     
+        }
     </style>
 </head>
 <body>
 
-    <div class="widget" id="widget"></div>
-
+<div class="widget" id="widget"></div>
 
 <script>
-
-quotes=[
+    quotes=[
 "1 Шүүгдэхгүйн тулд чи бүү шүү.",
 "2 Учир нь та нар яаж шүүнэ, түүнчлэн шүүгдэнэ. Та нарын хэмжүүрийн жишиг өөрсдийг чинь хэмжинэ.",
 "3 Чи ах дүүсийнхээ нүдэн дэх үртсийг хардаг атал яагаад өөрийн нүдэн дэх дүнзийг анзаардаггүй юм бэ?",
@@ -70,24 +59,23 @@ quotes=[
 "13 Нарийн хаалгаар ор. Учир нь сүйрэл уруу татан оруулдаг хаалга нь өргөн, зам нь уужим юм. Олон хүн түүгээр тийшээ ордог.",
 ];
 
-const INTERVAL = 60000;
+    const INTERVAL = 60000;
 
-function dispalyQuote(){
-
-    document.getElementById('widget').innerHTML =quotes[0];
-    quotes.forEach((quote, i) => {
-        setTimeout(() => {
-            document.getElementById('widget').innerHTML =quote;
-        }, i * INTERVAL);  
-    });
+    function displayQuote() {
+        document.getElementById('widget').innerHTML = quotes[0];
+        quotes.forEach((quote, i) => {
+            setTimeout(() => {
+                document.getElementById('widget').innerHTML = quote;
+            }, i * INTERVAL);
+        });
     }
 
-    function dispalyWidget() {
-        dispalyQuote();
-        setTimeout(dispalyWidget, quotes.length*INTERVAL);
+    function displayWidget() {
+        displayQuote();
+        setTimeout(displayWidget, quotes.length * INTERVAL);
     }
-    dispalyWidget()
 
+    displayWidget();
 </script>
 
 </body>

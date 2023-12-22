@@ -12,7 +12,8 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0; /* Optional background color */
+            background: url('https://www.google.com/gasearch?q=Background-image%20CSS&tbm=isch&shem=rime&source=sh/x/gs/m2/5#imgrc=Z0VfR44Zu7cMrM') center center no-repeat; /* Replace with your image URL */
+            background-size: cover;
         }
 
         .widget {
@@ -34,6 +35,11 @@
                 linear-gradient(to top, black 2px, transparent 2px) 100% 100%;
             background-repeat: no-repeat;
             background-size: 20px 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 </head>
@@ -42,7 +48,6 @@
 <div class="widget" id="widget"></div>
 
 <script>
-    <script>
     quotes=[
 "1 Шүүгдэхгүйн тулд чи бүү шүү.",
 "2 Учир нь та нар яаж шүүнэ, түүнчлэн шүүгдэнэ. Та нарын хэмжүүрийн жишиг өөрсдийг чинь хэмжинэ.",
@@ -80,4 +85,3 @@
 
 </body>
 </html>
-

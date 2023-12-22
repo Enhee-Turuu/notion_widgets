@@ -1,25 +1,32 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quote</title>
     <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
     <style>
+        body {
+            background: url(https://i0.wp.com/www.csscodelab.com/wp-content/uploads/2020/03/css-background-image-linear-gradient.png?resize=980%2C627&ssl=1
+                ) center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            height: 100vh;
+        }
+
         .widget {
-            padding: 5px;
-            color: ##FFFFFF;
+            padding: 5px 5px;
+            color: #000000;
             text-align: center;
             max-width: 95%;
             margin: auto;
             font-family: 'Caveat', cursive;
             font-size: 20px;
-            background-image: url(https://i0.wp.com/www.csscodelab.com/wp-content/uploads/2020/03/css-background-image-linear-gradient.png?resize=980%2C627&ssl=1
-                ) center center no-repeat; /* Replace with your image URL */
-            background-image-size: no-repeat;
-            background:
-                linear-gradient(to right, black 2px, transparent 2px) 0 0,
+            background: linear-gradient(to right, black 2px, transparent 2px) 0 0,
                 linear-gradient(to right, black 2px, transparent 2px) 0 100%,
                 linear-gradient(to left, black 2px, transparent 2px) 100% 0,
                 linear-gradient(to left, black 2px, transparent 2px) 100% 100%,
@@ -29,20 +36,16 @@
                 linear-gradient(to top, black 2px, transparent 2px) 100% 100%;
             background-repeat: no-repeat;
             background-size: 10px 10px;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
         }
     </style>
 </head>
+
 <body>
 
-<div class="widget" id="widget"></div>
+    <div class="widget" id="widget"></div>
 
-<script>
-    quotes=[
+    <script>
+        quotes=[
 "1 Шүүгдэхгүйн тулд чи бүү шүү.",
 "2 Учир нь та нар яаж шүүнэ, түүнчлэн шүүгдэнэ. Та нарын хэмжүүрийн жишиг өөрсдийг чинь хэмжинэ.",
 "3 Чи ах дүүсийнхээ нүдэн дэх үртсийг хардаг атал яагаад өөрийн нүдэн дэх дүнзийг анзаардаггүй юм бэ?",
@@ -58,24 +61,24 @@
 "13 Нарийн хаалгаар ор. Учир нь сүйрэл уруу татан оруулдаг хаалга нь өргөн, зам нь уужим юм. Олон хүн түүгээр тийшээ ордог.",
 ];
 
-    const INTERVAL = 60000;
+        const INTERVAL = 60000;
 
-    function displayQuote() {
-        document.getElementById('widget').innerHTML = quotes[0];
-        quotes.forEach((quote, i) => {
-            setTimeout(() => {
-                document.getElementById('widget').innerHTML = quote;
-            }, i * INTERVAL);
-        });
-    }
+        function dispalyQuote() {
+            document.getElementById('widget').innerHTML = quotes[0];
+            quotes.forEach((quote, i) => {
+                setTimeout(() => {
+                    document.getElementById('widget').innerHTML = quote;
+                }, i * INTERVAL);
+            });
+        }
 
-    function displayWidget() {
-        displayQuote();
-        setTimeout(displayWidget, quotes.length * INTERVAL);
-    }
-
-    displayWidget();
-</script>
+        function dispalyWidget() {
+            dispalyQuote();
+            setTimeout(dispalyWidget, quotes.length * INTERVAL);
+        }
+        dispalyWidget()
+    </script>
 
 </body>
+
 </html>

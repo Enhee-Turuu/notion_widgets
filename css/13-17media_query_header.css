@@ -394,8 +394,21 @@ section .title p{
   main .container{
     width: 768px;
   }
+  section .about{
+    width: 768px;
+    
+  }
+  section .feature{
+    width: 768px;
+  }
+  .bg{
+    width:100%;
+  }
   section .portfolio-me .portfolio-inner{
     width: 100%;
+  }
+  section .contact{
+    width: 768px;
   }
 }
 
